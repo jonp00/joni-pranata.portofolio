@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: oklch(70.4% 0.14 182.503); /* Biru utama */
+  --color-dark: oklch(20.8% 0.042 265.755); /* Warna gelap untuk teks */
+  --color-secondary: oklch(55.4% 0.046 257.417); /* Warna sekunder */
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  /* Gaya khusus untuk tombol */
+  .btn-primary {
+    @apply bg-brand text-white font-semibold py-3 px-6 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out;
+  }
+}
+
+/* custom style tambahan */
+@layer components {
+  .container {
+    @apply max-w-2xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-25;
+  }
+
+  .hamburger-line {
+    @apply w-6 h-0.5 bg-dark my-1.5 block;
+  }
+
+  .hamburger-active > span:nth-child(1) {
+    @apply rotate-45;
+  }
+
+  .hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+  }
+
+  .hamburger-active > span:nth-child(3) {
+    @apply -rotate-45;
+  }
+
+  .navbar-fixed {
+    @apply fixed backdrop-blur-md shadow-md;
+  }
+}
